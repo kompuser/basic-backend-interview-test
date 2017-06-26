@@ -1,36 +1,46 @@
-# Basic Backend Developer Interview
+
+- Principe de l'app : Traitement (import — export) d'un lot de données en JSON 
+- Langage : PHP ou JS ou les 2 !
+
+
+EXPORT DE LA SÉLECTION :
+• Chaque ligne du tableau possède une checkbox : à  la soumission du formulaire, on exporte dans un nouveau JSON les elements cochés.
+
+Le tout est que ça reste lisible, qu’il y ait un bon traitement de l'information source et un l’aspect simple de l’export.
+
+Ci-joint le JSON volontairement laissé tel quel,
+N’hésites pas si tu as des questions,
+
+D’avance merci,
+Benoit
+
+
+# Test SEPPA : développeur back-end
 
 Dear candidate, please follow this readme and solve all questions.
 
 > Before you can start, you should prepare your development environment.
 
-**This test requires:**
-- access to the internet
-- your favourite IDE
-- working dev environment (PHP 5.6+ or Node.js 6+)
-- database (MongoDB, Postgres, MySQL)
-- nginx or alternative simple dev web server
+## Taches principales :
 
-**Good luck!**
+**NOTE:** vous êtes libres d'utiliser le framework et/ou bilbiothèque de votre choix. Un bonus pour en justifier le choix. PHP, JS peu importe.
 
+Parsing JSON, affichage des résultats dans un tableau puis export des données sélectionnées vers un nouveau JSON.
 
---------
-
-
-## Test tasks:
-
-**NOTE:** You are free to use any framework you wish. Bonus points for an explanation of your choice.
-
-1. Specify a default controller
-  - for route `/`
-  - with a proper json return `{"hello":"world!"}`
-
-2. Use the api.nasa.gov
-  - the API-KEY is `N7LkblDsc5aen05FJqBQ8wU4qSdmsftwJagVK7UD`
-  - documentation: https://api.nasa.gov/neo/?api_key=N7LkblDsc5aen05FJqBQ8wU4qSdmsftwJagVK7UD
+1. JSON
+  - Créer un tableau et y afficher chaque objet JSON
+  - Les clés du JSON à utiliser sont : Update, SyndicObjectName, EQUIP, OUVERTURE
+  - Ainsi : les colonnes du tableau seront nommés : "Publication", "Nom", "Equipements", "Ouverture"
   
-3. Write a command
-  - to request the data from the last 3 days from nasa api
+2. Affichage des données dans un tableau
+  - La colonne "Publication" affichera une date au format fr (jour mois année), tel que : "Mis à jour il y a ... jour  
+  - La colonne "Equipements" aura son contenu affiché sous forme d'une liste chaque élement
+  - La colonne "Ouverture" devra afficher une date de début / date de fin sous la forme "Ouvert du (jour mois) au (jour mois)".
+    **NOTE :** afficher "Ouvert toute l'année" si les dates traitées vont du 1er janv. au 31 dec.
+  - Une colonne "case à cocher" servira à sélectionner une ligne et exporter les données
+  
+3. Traiement des données
+  - Chaque ligne du tableau possède une checkbox : à  la soumission du formulaire, on exporte dans un nouveau JSON les elements cochés
   - response contains count of Near-Earth Objects (NEOs)
   - persist the values in your DB
   - Define the model as follows:
@@ -40,44 +50,14 @@ Dear candidate, please follow this readme and solve all questions.
     - speed (kilometers_per_hour)
     - is hazardous (is_potentially_hazardous_asteroid)
 
-4. Create a route `/neo/hazardous`
-  - display all DB entries which contain potentially hazardous asteroids
-  - format JSON
-
-5. Create a route `/neo/fastest?hazardous=(true|false)`
-  - analyze all data
-  - calculate and return the model of the fastest asteroid
-  - with a hazardous parameter, where `true` means `is hazardous`
-  - default hazardous value is `false`
-  - format JSON
-
-6. Create a route `/neo/best-year?hazardous=(true|false)`
-  - analyze all data
-  - calculate and return a year with most asteroids
-  - with a hazardous parameter, where `true` means `is hazardous`
-  - default hazardous value is `false`
-  - format JSON
-
-7. Create a route `/neo/best-month?hazardous=(true|false)`
-  - analyze all data
-  - calculate and return a month with most asteroids (not a month in a year)
-  - with a hazardous parameter, where `true` means `is hazardous`
-  - default hazardous value is `false`
-  - format JSON
-   
+  
 ## Additional Instructions
 
 - After you're done, provide us the link to your repository.
 - Leave comments where you were not sure how to properly proceed.
-- Implementations without a README will be automatically rejected.
 
 ## Bonus Points
 
-- Test.
-- Clean code!
-- Knowledge of application flow.
-- Knowledge of modern best practices/coding patterns.
-- Componential thinking.
-- Knowledge of Docker.
-- (PHP only) Usage of symfony framework.
-- Usage of MongoDB as persistance storage.
+- Test
+- Code nettoyé
+- Emploi des bonnes pratiques / code patterns.
