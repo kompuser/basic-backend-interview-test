@@ -9,6 +9,42 @@
     </head>
     <body>
         <p>Test back-end SEPPA</p>
+    
+        <form method="" action="">
+
+            <table>
+                <thead>
+                    <th>Publication</th>
+                    <th>Nom</th>
+                    <th>Equipements</th>
+                    <th>Ouverture</th>
+                    <th>Action</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" id="updated" name="updated" value="" placeholder="" />
+                        </td>
+                        <td> 
+                            <input type="text" id="nom" name="nom" value="" placeholder="" />
+                        </td>
+                        <td>
+                            <textarea id="equipements" name="equipements" placeholder="la liste des equipements" data-minlength="20"></textarea>
+                        </td>
+                        <td>
+                            <textarea id="ouverture" name="ouverture" placeholder="ouverture" data-minlength="20"></textarea>
+                        </td>
+                        <td>
+                            <input type="checkbox" name="edition" id="edition" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <span id="loading"></span>
+            <input type="submit" value="Modifier les rangées cochées" id="submit-button" />
+           
+        </form>
     </body>
 </html>
 	
