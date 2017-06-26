@@ -1,8 +1,3 @@
- e tout est que ça reste lisible, qu’il y ait un bon traitement de l'information source et un l’aspect simple de l’export.
-
-Ci-joint le JSON volontairement laissé tel quel,
-
-
 # Test SEPPA : développeur back-end
 
 - Principe du test : Traitement (import — export) d'un lot de données en JSON.
@@ -21,7 +16,8 @@ Ci-joint le JSON volontairement laissé tel quel,
   - La colonne "Publication" affichera une date au format fr (jour mois année), tel que : "Mis à jour il y a ... jour  
   - La colonne "Equipements" aura son contenu affiché sous forme d'une liste chaque élement
   - La colonne "Ouverture" devra afficher une date de début / date de fin sous la forme "Ouvert du (jour mois) au (jour mois)".
-    **NOTE :** afficher "Ouvert toute l'année" si les dates traitées vont du 1er janv. au 31 dec.
+    **NOTE :** Le contenu de cette clé possède une date de début sous la forme JJ/MM/YYY et une date de fin sous le même format.
+    - Afficher "Ouvert toute l'année" si les dates traitées vont du 1er janv. au 31 dec.
   - Une colonne "case à cocher" servira à sélectionner une ligne et exporter les données
   
 3. Export des données
